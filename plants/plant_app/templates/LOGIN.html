@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/LOGIN.css' %}">
+{% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="from_le">
+    </section>
+
+    <div class="form_ra">
+        <h1>LOGIN</h1>
+        <form class="submit" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" minlength="8"
+                required><br>
+            <div>
+                <button type="submit" class="but_home">Submit</button><div
+                    class></div>
+            </div>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </form>
+    </div>
+</div>
+
+{% endblock %}
