@@ -21,7 +21,8 @@ I wanted a simple way for plant lovers to organize their plants online. It is ea
 
 
 ## ERD
-Untitled (1).png
+![alt text](image.png)
+
 Table Plants {
   Name varchar
   category varchar
