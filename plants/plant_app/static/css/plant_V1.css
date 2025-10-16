@@ -1,0 +1,216 @@
+/* ---------------------------------------- */
+/* 🔹 Reset & Base Styles                   */
+/* ---------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-image: url('/static/images/AdobeStock_561460065_Preview.jpeg');
+  background-size: cover;
+background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Layout Containers                     */
+/* ---------------------------------------- */
+.container {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  max-width: 960px;
+  gap: 28px;
+  align-items: center;
+    font-size: 15px;
+justify-content: center;
+  align-items: center;
+}
+
+main {
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin: 5%;
+  padding-left: 10%;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Form Sections                         */
+/* ---------------------------------------- */
+.form_ra {
+  
+  background:#ddf2a9;
+  height: 500px;
+  width: 500px;
+  border: 1px solid;
+  box-shadow: 5px 10px;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Form Elements                         */
+/* ---------------------------------------- */
+form {
+  display: flex;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+label {
+  font-size: 18px;
+  display: flex;
+  justify-self: right;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="email"],
+input[type="password"] {
+  width: 95%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.button {
+  height:40px ;
+  margin-top: 2%;
+margin-left: 35%;
+  width: 105px;
+  justify-content: center;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #e8ef9c;
+  width: 130px;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Header & Footer                       */
+/* ---------------------------------------- */
+header,
+footer {
+  padding: 25px;
+}
+
+footer {
+  margin-top: 20px;
+  background: #e2f7ad;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Navigation & Lists                    */
+/* ---------------------------------------- */
+
+.footer1 {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 12%;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.footer1 li {
+  padding: 8px;
+  margin-top: 15px;
+  list-style: none;
+}
+
+.lionhome {
+  flex-direction: column;
+  list-style: none;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Link Styling                          */
+/* ---------------------------------------- */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: rgb(128, 128, 96);
+  font-weight: bold;
+  width: 50px;
+}
+
+/* ---------------------------------------- */
+/* 🔹 List Item Design                      */
+/* ---------------------------------------- */
+.list {
+  color: white;
+  padding: 14px 20px;
+  display: block;
+  background-color: #04AA6D;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Responsive for Phones                 */
+/* ---------------------------------------- */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .form_ra {
+    width: 100%;
+    padding: 20px;
+        height: 504px;
+    width: 499px;
+  }
+
+  .button {
+    width: 100%;
+    margin-left: 7%;
+  }
+   footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer a {
+    margin: 5px 0;
+  }
+}

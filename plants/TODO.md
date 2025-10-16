@@ -1,6 +1,5 @@
-# TODO List for Fixing Delete Button Issue
-
-- [x] Update `plant_app/templates/home.html` to add a delete form for each plant card, similar to `details.html`.
-- [x] Update `plant_app/templates/details.html` to display details of a single plant (remove the loop over `plants` and adjust to show the single `plant` with a delete button).
-- [x] Test the application to ensure delete buttons appear and function correctly in both templates.
-- [x] Run the Django server and check for any errors.
+- [x] Fix views.py: Rename the second 'details' function to 'edit_plant', change parameter to 'plan_id', use 'pk=plan_id' in get_object_or_404.
+- [x] Fix urls.py: Change 'edit/<int:plant_id>/' to 'edit/<int:plan_id>/', change 'delete/<int:plant_id>/' to 'delete/<int:plan_id>/'.
+- [x] Fix delete_plant function in views.py: Change parameter to 'plan_id'.
+- [x] Update details.html: Change CSS link to 'css/details.css', update delete form to use 'plant.pk'.
+- [x] Update eadit.html: Change content to edit form.

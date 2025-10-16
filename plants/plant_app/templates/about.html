@@ -1,8 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}About{% endblock %}
+{% block title %}About Us{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
 
 {% block content %}
-<h1>About Us</h1>
-<p>Welcome to our plant identification platform 🌿</p>
+<div class="about-container">
+    <div class="about-card">
+        <h1>About Us 🌱</h1>
+        <p>
+            Welcome to our plant identification and management platform!  
+            Our goal is to make it easy for you to identify, manage, and learn more about plants around you.  
+            Whether you're a gardening enthusiast or just love nature, we're here to help your plants thrive 🌿.
+        </p>
+
+        <h3>Our Mission</h3>
+        <p>
+            To connect people with nature through technology, promoting sustainability and environmental awareness.
+        </p>
+
+        <h3>Contact Us</h3>
+        <ul>
+            <li>Email: <a href="mailto:zuherm466@gmail.com">zuherm466@gmail.com</a></li>
+            <li>Instagram: <a href="https://www.instagram.com/zuheralsmak/">zuheralsmak</a></li>
+            <li>linkedin: <a href="www.linkedin.com/in/zuhier-mohammad-alsmak">zuhier _mohammad</a></li>
+            <li>Phone: +962 79 123 4567</li>
+            <li>Location: Amman, Jordan</li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

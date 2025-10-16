@@ -1,0 +1,168 @@
+/* ---------------------------------------- */
+/* 🔹 Reset & Base Styles                   */
+/* ---------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+html,
+body {
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-image: url('/static/images/home1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Layout Containers                     */
+/* ---------------------------------------- */
+.about-container {
+  font-size: 24px;
+  margin: auto;
+  background: #45a049;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 960px;
+  gap: 28px;
+}
+
+.about-card {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+main {
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+
+  margin: 5%;
+  padding-left: 10%;
+}
+
+
+
+
+/* ---------------------------------------- */
+/* 🔹 Buttons                               */
+/* ---------------------------------------- */
+
+
+
+button:hover {
+  background-color: #45a049;
+  width: 100px;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Header & Footer                       */
+/* ---------------------------------------- */
+header,
+footer {
+  padding: 25px;
+}
+
+footer {
+  margin-top: 20px;
+  background: #e2f7ad;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  text-decoration: none;
+  flex-wrap: wrap;
+
+}
+
+
+
+/* ---------------------------------------- */
+/* 🔹 Link Styling                          */
+/* ---------------------------------------- */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: rgb(229, 240, 159);
+  text-shadow: #e5f593;
+  border-radius: 15px;
+  font-weight: bold;
+  width: 55px;
+  font-weight: bold;
+
+}
+
+footer a:hover {
+  color: rgb(219, 250, 15);
+  background: black;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+/* ---------------------------------------- */
+/* 📱 Responsive for Phones                 */
+/* ---------------------------------------- */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    font-size: 18px;
+    width: 100%;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .about-card {
+    text-align: center;
+  }
+
+  main {
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  header,
+  footer {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer a {
+    margin: 5px 0;
+  }
+}

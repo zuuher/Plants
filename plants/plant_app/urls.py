@@ -11,8 +11,9 @@ urlpatterns = [
     path("plant/", views.add_plant, name="plant"),
     path("about/", views.about, name="about"),
     path('signup/', views.signup, name='signup'),
-    path('details/<int:plant_id>/', views.edit_plant, name='edit_plant'),
-   path('delete/<int:plant_id>/', views.delete_plant, name='delete_plant'),
+    path('details/<int:plan_id>/', views.edit_plant, name='details'),
+
+   path('delete/<int:plan_id>/', views.delete_plant, name='delete_plant'),
 
 ]
 

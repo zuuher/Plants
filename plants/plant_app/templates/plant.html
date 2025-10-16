@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block extra_head %}
-<link rel="stylesheet" href="{% static 'css/plant.css' %}">
+<link rel="stylesheet" href="{% static 'css/plant_V1.css' %}">
+
 {% endblock %}
 
 {% block title %}Add Plant{% endblock %}
@@ -10,10 +12,24 @@
 <div class="container">
     <div class="form_ra">
         <h1>Add Plant</h1>
-        <form method="POST" action="{% url 'plant' %}" enctype="multipart/form-data">
+        <form method="POST" action="{% url 'plant' %}"
+            enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Add Plant</button>
+            <label for="{{ form.name.id_for_label }}">Plant Name:</label>
+            {{ form.name }}
+
+            <label for="{{ form.price.id_for_label }}">Price:</label>
+            {{ form.price }}
+
+            <label for="{{ form.life_cycle.id_for_label }}">Life Cycle:</label>
+            {{ form.life_cycle }}
+
+            <label for="{{ form.old.id_for_label }}">Age:</label>
+            {{ form.old }}
+
+            <label for="{{ form.image.id_for_label }}">Image:</label>
+            {{ form.image }}
+            <button class="button" type="submit">Add Plant</button>
         </form>
     </div>
 

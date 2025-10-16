@@ -34,8 +34,6 @@ def signup(request):
     
     return render(request, 'signup.html', {'form': form})
 
-           
-
    
 def LOGIN(request):
     if request.method == 'POST':
@@ -72,7 +70,7 @@ def about(request):
     return render(request, "about.html") 
 @login_required(login_url='login')
 def details(request, plan_id):
-    plant = get_object_or_404(Plant, plan_id=plan_id)
+    plant = get_object_or_404(Plant, pk=plan_id)
     return render(request, 'details.html', {'plant': plant})
 
 @login_required(login_url='login')
@@ -82,16 +80,16 @@ def add_plant(request):
         if form.is_valid():
             plant = form.save()
             messages.success(request, "Plant added successfully.")
-            return redirect('home') 
+            return redirect('home')
         else:
             messages.error(request, "Error while saving plant. Please check the form.")
     else:
         form = PlantForm()
     return render(request, 'plant.html', {'form': form})
 @login_required(login_url='login')
-def edit_plant(request, plant_id):
-    plant = get_object_or_404(Plant, pk=plant_id)
-    
+def edit_plant(request, plan_id):
+    plant = get_object_or_404(Plant, pk=plan_id)
+
     if request.method == 'POST':
         form = PlantForm(request.POST, request.FILES, instance=plant)
         if form.is_valid():
@@ -102,13 +100,13 @@ def edit_plant(request, plant_id):
             messages.error(request, "Error while updating plant. Please check the form.")
     else:
         form = PlantForm(instance=plant)
-    
-    return render(request, 'plant.html', {'form': form, 'plant': plant})
+
+    return render(request, 'details.html', {'form': form, 'plant': plant})
 
 
 @login_required(login_url='login')
-def delete_plant(request, plant_id):
-    plant = get_object_or_404(Plant, plan_id=plant_id)
+def delete_plant(request, plan_id):
+    plant = get_object_or_404(Plant, pk=plan_id)
     plant.delete()
     messages.success(request, f"Plant '{plant.name}' has been deleted successfully.")
     return redirect('home')

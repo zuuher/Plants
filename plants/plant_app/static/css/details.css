@@ -11,15 +11,18 @@
 html,
 body {
   height: 100%;
+  font-family: 'Inter', sans-serif;
+
 }
 
 body {
-  font-family: 'Inter', sans-serif;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background-image: url('/static/images/home1.jpg');
+  background-image: url('/static/images/plant.jpg');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* ---------------------------------------- */
@@ -27,42 +30,28 @@ body {
 /* ---------------------------------------- */
 .container {
   display: flex;
-  width: 100%;
+  margin: auto;
+  width:70%;
   max-width: 960px;
   gap: 28px;
   align-items: center;
+    font-size: 15px;
+justify-content: center;
+    background: #ddf2a9;
+    padding-top: 5%;
+    padding-bottom: 2%;
 }
 
 main {
+    display: flex;
   justify-content: center;
   align-items: center;
+  padding: 30px;
   margin: 5%;
   padding-left: 10%;
 }
-
-/* ---------------------------------------- */
-/* 🔹 Form Sections                         */
-/* ---------------------------------------- */
-.form_ra {
-  background: #d8eca7;
-  height: 500px;
-  width: 500px;
-  border: 1px solid;
-  box-shadow: 5px 10px;
-}
-
-.from_le {
-  width: 50%;
-  height: 500px;
-  padding: 28px;
- background: none;
-  border: 1px solid;
-  box-shadow: 5px 10px;
-}
-
-.form_ra h1 {
-  margin-top: 8px;
-  padding-top: 10%;
+main img{
+padding-top: 11%;
 }
 
 /* ---------------------------------------- */
@@ -82,44 +71,33 @@ label {
   text-align: left;
 }
 
-input[type="Emali"],
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="email"],
 input[type="password"] {
   width: 95%;
   padding: 10px 12px;
-  border: 1px solid;
-  border-radius: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   font-size: 15px;
+
+}
+main button{
+    width: 50%;
+    text-align: center;
+    margin-left: 28%;
 }
 
-/* ---------------------------------------- */
-/* 🔹 Buttons                               */
-/* ---------------------------------------- */
-.submit .login {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 8px;
+main button:hover{
+    width: 60%;
+    font-size: larger;
+    text-align: center;
+    margin-left: 28%;
 }
 
-.but_home {
-  background-color: #04AA6D;
-  border: none;
-  width: 25%;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
 
-button:hover {
-  background-color: #45a049;
-  width: 100px;
-}
+
 
 /* ---------------------------------------- */
 /* 🔹 Header & Footer                       */
@@ -141,12 +119,6 @@ footer {
 /* ---------------------------------------- */
 /* 🔹 Navigation & Lists                    */
 /* ---------------------------------------- */
-.ul_home {
-  background: #daf1a0;
-  display: flex;
-  list-style: none;
-  justify-content: flex-end;
-}
 
 .footer1 {
   display: flex;
@@ -187,7 +159,7 @@ a {
 }
 
 a:hover {
-  color: green;
+  color: rgb(128, 128, 96);
   font-weight: bold;
   width: 50px;
 }
@@ -206,4 +178,50 @@ a:hover {
   display: inline-block;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+/* ---------------------------------------- */
+/* 🔹 Responsive for Phones                 */
+/* ---------------------------------------- */
+@media (max-width: 768px) {
+  body {
+    margin:0 ;
+    padding: 10px;
+  }
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="email"],
+input[type="password"] {
+  width: 80%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+
+}
+
+  .container{
+display: flex;
+    margin: auto;
+    width: 100%;
+    align-items: center;
+    font-size: 10px;
+    justify-content: center;
+    background: #ddf2a9;
+ 
+  }
+  .button {
+    width: 100%;
+    margin-left: 7%;
+  }
+   footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer a {
+    margin: 5px 0;
+  }
 }
