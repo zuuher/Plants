@@ -1,44 +1,58 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}home{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block extra_head %}
-<link rel="stylesheet" href="{% static 'css/ALL.CSS' %}">
+<link rel="stylesheet" href="{% static 'css/all.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="container">
-    <div class>
-        <p>asfdcz</p>
+    <!-- Left Sidebar -->
+    <div class="left-column">
+        <h3>Menu</h3>
+        <ul>
+                          {% if user.is_authenticated %}
+
+      <li><a href="{% url 'home' %}"  class="list">Home</a></li>
+         <li><a href="{% url 'plant' %}" class="list">plant</a></li>
+         {% else %}
+      <!-- للمستخدمين الغير مسجلين -->
+      <li><a href="{% url 'login' %}" class="list" >Login</a></li>
+      <li><a href="{% url 'signup' %}"class="list"  >Signup</a></li>
+    {% endif %}
+        </ul>
     </div>
 
-    <div class>
+    <!-- Main Content -->
+    <div class="center-column">
         <h2>🌿 List of Plants</h2>
-
         <div class="plant-list">
-           {% for plant in plants %}
-        <div class="plant-card">
-            <a href="{% url 'details' plan_id=plant.plan_id %}">
-                <img src="{{ plant.image.url }}" alt="{{ plant.name }}" width="200" height="200">
-            </a>
-            <h3>{{ plant.name }}</h3>
-            <p>USER: {{ plant.user.user_id }}</p>
-            <p>Price: {{ plant.price }}</p>
-            <p>Life Cycle: {{ plant.life_cycle }}</p>
-            <p>Age: {{ plant.old }} years</p>
-            
+            {% for plant in plants %}
+            <div class="plant-card">
+                <a href="{% url 'details' plan_id=plant.plan_id %}">
+                    <img src="{{ plant.image.url }}" alt="{{ plant.name }}">
+                </a>
+                <h3>{{ plant.name }}</h3>
+                <p>USER: {{ plant.user.user_id }}</p>
+                <p>Price: {{ plant.price }}</p>
+                <p>Life Cycle: {{ plant.life_cycle }}</p>
+                <p>Age: {{ plant.old }} years</p>
+            </div>
+            {% empty %}
+            <p>No plants added yet.</p>
+            {% endfor %}
         </div>
-        {% empty %}
-        <p>No plants added yet.</p>
-        {% endfor %}
-        </div>
-
     </div>
 
-    <div class>
-        <p>Extra section</p>
+    <!-- Right Sidebar -->
+    <div class="right-column">
+        <h3>Sponsored</h3>
+        <div class="ads">
+            <p>Check out new plant accessories!</p>
+            <p>Join Plant Lovers community 🌱</p>
+        </div>
     </div>
 </div>
-
 {% endblock %}

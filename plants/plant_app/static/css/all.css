@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #d8f3dc, #95d5b2);
+}
+
+/* Container grid like Facebook */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* left - center - right */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  height: calc(100vh - 40px);
+}
+
+/* Columns styling */
+.container > div {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+/* Left column */
+.left-column ul {
+  list-style: none;
+  padding: 10px 0;
+}
+.left-column ul li {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.left-column ul li:hover {
+  background-color: #cdeac0;
+}
+
+/* Center column */
+.plant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.plant-card {
+  background-color: #e8f5e9;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.plant-card img {
+  width: 200px;      /* عرض الصورة */
+  height: 200px;     /* ارتفاع الصورة */
+  object-fit: cover; /* لتجنب تشويه الصورة */
+  border-radius: 10px;
+}
+
+/* Right column */
+.right-column .ads {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.right-column .ads p {
+  padding: 8px;
+  background-color: #d0f0c0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+button:hover {
+  background-color: #45a049;
+  width: 100px;
+}
+a:hover {
+  color: rgb(229, 240, 159);
+  text-shadow: #e5f593;
+  border-radius: 15px;
+  font-weight: bold;
+  width: 100px;
+  font-weight: bold;
+
+}
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: auto;
+    margin: 10px;
+  }
+
+  .container > div {
+    height: auto;
+  }
+  .plant-card img {
+  width: 200px;      /* عرض الصورة */
+  height: 200px;     /* ارتفاع الصورة */
+  object-fit: cover; /* لتجنب تشويه الصورة */
+  border-radius: 10px;
+}
+
+}
