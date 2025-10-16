@@ -1,0 +1,124 @@
+/* Container */
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 960px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start; /* لا نغيّرها حتى الصورة تبقى عاليسار */
+}
+
+/* Form Box */
+.form_ra {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: rgba(216, 236, 167, 0.9);
+  padding: 30px;
+  box-shadow: 5px 10px rgba(0,0,0,0.1);
+
+  display: flex;           /* لجعل المحتوى في المنتصف */
+  flex-direction: column;  /* ترتيب الحقول عمودي */
+  justify-content: center; /* محاذاة عمودية */
+  align-items: center;     /* محاذاة أفقية */
+}
+
+/* Form Styles */
+.form_ra form {
+  width: 100%; /* حتى الحقول تاخد كامل العرض داخل form_ra */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center; /* محاذاة الأزرار في المنتصف */
+  width: 100%;
+}
+
+.but_home {
+  background-color: #04AA6D;
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.but_home:hover {
+  background-color: #45a049;
+}
+
+/* Messages */
+.messages {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.messages li {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.messages li.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.messages li.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form_ra, .from_le {
+    max-width: 90%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .but_home {
+    width: 100%;
+  }
+}

@@ -1,66 +1,173 @@
-# 🌱 Plant Management Project
+🌱 Plant Management System
+Project Overview
 
-## Welcome! 👋
-Hi! This is a small web app I made for people who love plants. It’s like having a little garden online. You can add your plants, see them, and manage them easily.  
+Plant Management is a simple web app made with Django.
+It helps people who love plants to add, edit, delete, and view plants online.
+Each plant has a name, price, life cycle, age, and photo.
+The goal is to make it easy for users to keep their plant list organized and share it with others.
 
-## What You Can Do
-- **Sign Up & Log In:** Make your own account and keep your plants safe.  
-- **Add Plants:** Give a name, price, life cycle, and even a picture.  
-- **See Plants:** Look at all the plants other users added.  
-- **Plant Details:** Click any plant to see more information.  
-- **Edit & Delete:** Change the details or remove a plant when needed.  
+🎯 Purpose
 
-## Why This App
-I wanted a simple way for plant lovers to organize their plants online. It is easy to use and lets you share your plants with others.  
+The project was created to help users (gardeners, students, or shop owners) save and manage plant information online in one place.
+It gives a friendly design that works well on both computers and phones.
 
-## Technology Used
-- **Backend:** Django  
-- **Frontend:** HTML & CSS  
-- **Database:** SQLite  
-- **Images:** You can upload pictures for your plants 🌿  
+🌿 Main Features
+🔐 User System
+
+Sign Up / Log In / Log Out using Django’s built-in system.
+
+Each user can manage their own plants only.
+
+🌼 Plant Management
+
+Add Plant: Add name, price, age, life cycle, and upload an image.
+
+View Plants: See all plants added by users.
+
+Edit or Delete: Change or remove your own plants.
+
+Form Design: Simple and clean with custom CSS.
+
+🖼️ Images
+
+Upload real plant photos.
+
+Photos are shown on the website dynamically.
+
+🔍 Easy Navigation
+
+All pages are made with Django templates.
+
+Home page shows all plants.
+
+Details page shows full information for one plant.
+
+Works well on mobile screens.
+
+🧱 Tech Stack
+Part	Technology
+Backend	Django (Python)
+Frontend	HTML, CSS, JavaScript
+Database	SQLite
+Authentication	Django built-in system
+Image Upload	Django ImageField
+🧩 Database Design (ERD)
+erDiagram
+    USERS {
+        int id PK
+        varchar name
+        varchar email
+        varchar password
+        int phone_number
+    }
+
+    PLANTS {
+        int plan_id PK
+        varchar name
+        varchar category
+        varchar life_cycle
+        int price
+        timestamp old
+    }
+
+    CATEGORIES {
+        int plant_id FK
+        varchar trees
+        varchar shrubs
+        varchar herbs
+        varchar climbing
+        varchar creeping
+    }
+
+    ORDERS {
+        int order_id PK
+        int total_amount
+        varchar order_status
+        timestamp order_date
+        int user_id FK
+    }
+
+    ORDER_ITEMS {
+        int id PK
+        varchar inside_the_order
+        int number_of_seedlings
+        int order_id FK
+        int plant_id FK
+    }
+
+    USERS ||--o{ ORDERS : places
+    ORDERS ||--|{ ORDER_ITEMS : contains
+    PLANTS ||--|{ ORDER_ITEMS : listed_in
+    PLANTS ||--|| CATEGORIES : classified_as
+
+👥 User Stories
+Authentication
+
+As a visitor, I can view all plants.
+
+As a visitor, I need to log in before adding or editing a plant.
+
+As a registered user, I can log in and manage my own plants.
+
+As a registered user, I can log out safely.
+
+Plants
+
+I can add new plants with name, price, and image.
+
+I can edit or delete only my own plants.
+
+I can see all plants and their details easily.
+
+Interface
+
+The website has a clean and easy design.
+
+Messages appear after adding or deleting a plant.
+
+⚙️ Installation & Setup
+1️⃣ Clone Repository
+git clone https://github.com/yourusername/Plant-Management.git
+cd Plant-Management
+
+2️⃣ Create Virtual Environment
+python -m venv venv
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\activate     # Windows
+
+3️⃣ Install Dependencies
+pip install -r requirements.txt
+
+4️⃣ Run Migrations
+python manage.py makemigrations
+python manage.py migrate
+
+5️⃣ Create Superuser (optional)
+python manage.py createsuperuser
+
+6️⃣ Start the Server
+python manage.py runserver
 
 
-## ERD
-![alt text](image.png)
+Visit the app on: http://127.0.0.1:8000/
 
-Table Plants {
-  Name varchar
-  category varchar
-  life_cycle varchar
-  price integer
-  plan_id integer [primary key]
-  old timestamp
-}
+📸 Example Pages
+Page	Description
+🏠 Home	Shows all plants
+➕ Add Plant	Form to add a new plant
+🧾 Details	View full plant info
+✏️ Edit/Delete	Manage your own plants
+🔐 Login/Sign Up	User system
+🚀 Future Ideas
 
-Table Users {
-  id integer [primary key]
-  Name varchar
-  email varchar
-  password varchar
- phone_number integer
-}
+Add a search bar to find plants quickly.
 
-Table Orders {
-  total_amount integer 
-  order_status varchar
-  Order_date timestamp
-}
+Add a category filter (trees, herbs, etc.).
 
-Table Order_Items {
-  Inside_theorder varchar
-  number_ofseedlings integer [not null]
-}
-Table Categories {
-plant_id integer [unique]  
- Trees varchar
-  shrubs varchar
-  herbs varchar
-  climbing varchar
-  creeping varchar
-}
-REF: Plants.plan_id < Categories.plant_id
-REF: Users.id < Orders.order_status
-REF: Orders.order_status > Plants.plan_id
-REF: Plants.plan_id > Order_Items.Inside_theorder
+Add comments or likes for plants.
 
+Make a simple order system for selling plants.
 
+💡 Goal
+
+To build a complete Django web app with models, views, templates, CRUD actions, and authentication — using clear design and easy user experience.

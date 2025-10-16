@@ -23,8 +23,11 @@ def signup(request):
                 messages.error(request, "هذا البريد مسجل مسبقًا")
                 return render(request, 'signup.html', {'form': form})
 
+            if User.objects.filter(username=username).exists():
+                messages.error(request, "اسم المستخدم موجود مسبقًا")
+                return render(request, 'signup.html', {'form': form})
+
             # إنشاء مستخدم جديد
-            User.objects.create_user(username=username, email=email, password=password)
             messages.success(request, "تم إنشاء الحساب بنجاح، يمكنك تسجيل الدخول الآن")
             return redirect('login')
         else:
