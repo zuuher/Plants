@@ -1,5 +1,0 @@
-- [x] Fix views.py: Rename the second 'details' function to 'edit_plant', change parameter to 'plan_id', use 'pk=plan_id' in get_object_or_404.
-- [x] Fix urls.py: Change 'edit/<int:plant_id>/' to 'edit/<int:plan_id>/', change 'delete/<int:plant_id>/' to 'delete/<int:plan_id>/'.
-- [x] Fix delete_plant function in views.py: Change parameter to 'plan_id'.
-- [x] Update details.html: Change CSS link to 'css/details.css', update delete form to use 'plant.pk'.
-- [x] Update eadit.html: Change content to edit form.

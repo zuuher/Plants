@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% load static %} {# لازم يكون هذا السطر قبل أي استخدام للـ static tag #}
+{% block title %}home{% endblock %}
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/ALL.CSS' %}">
 {% endblock %}
-
-{% block title %}Home{% endblock %}
 
 {% block content %}
 <div class="container">
